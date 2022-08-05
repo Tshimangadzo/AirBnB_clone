@@ -10,8 +10,8 @@ class BaseModel:
         """ init documentation"""
 
         self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        self.created_at = datetime.now().isoformat()
+        self.updated_at = datetime.now().isoformat()
 
 
     def __str__(self) -> str:
@@ -26,7 +26,5 @@ class BaseModel:
     def to_dict(self):
         """ returns a dictionary containing all keys/values of __dict__ of the instance"""
         intsance_info = self.__dict__
-        intsance_info["created_at"] = self.created_at.isoformat()
-        intsance_info["updated_at"] = self.updated_at.isoformat()
         intsance_info["__class__"] = self.__class__.__name__
         return intsance_info
