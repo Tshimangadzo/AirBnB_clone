@@ -28,3 +28,7 @@ class BaseModel:
         intsance_info = self.__dict__
         intsance_info["__class__"] = self.__class__.__name__
         return intsance_info
+
+base = BaseModel()
+print(base.to_dict())
+print(base.__str__())
