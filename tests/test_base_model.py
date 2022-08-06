@@ -5,6 +5,7 @@ from datetime import datetime
 from time import sleep
 from models.base_model import BaseModel
 
+
 class TestBaseModel_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the BaseModel class."""
 
@@ -42,12 +43,13 @@ class TestBaseModel_instantiation(unittest.TestCase):
         base_model = BaseModel()
         base_model.id = "some_id"
         base_model.updated_at = date_repr
-        base_model.created_at = base_model.updated_at
+        base_model.created_at = date_repr
         base_model_str = base_model.__str__()
+        print(date_repr)
         self.assertIn("[BaseModel] (some_id)", base_model_str)
         self.assertIn("'id': 'some_id'", base_model_str)
-        self.assertIn("'created_at': " + date_repr, base_model_str)
-        self.assertIn("'updated_at': " + date_repr, base_model_str)
+        self.assertIn("'created_at': " + f"'{date_repr}'", base_model_str)
+        self.assertIn("'updated_at': " +  f"'{date_repr}'", base_model_str)
 
 
 if __name__ == "__main__":
