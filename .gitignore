@@ -1,5 +1,5 @@
-models/__pycache__
-tests/__pycache__
+*/__pycache__
+*/*/__pycache__
 *.egg-info
 build
 dist/*
