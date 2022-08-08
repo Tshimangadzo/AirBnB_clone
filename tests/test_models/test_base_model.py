@@ -50,6 +50,5 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertIn("'created_at': " + f"'{date_repr}'", base_model_str)
         self.assertIn("'updated_at': " +  f"'{date_repr}'", base_model_str)
 
-
 if __name__ == "__main__":
     unittest.main()
