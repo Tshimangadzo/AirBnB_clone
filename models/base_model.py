@@ -42,6 +42,3 @@ class BaseModel:
         instance_info["created_at"] = self.created_at.isoformat()
         instance_info["updated_at"] = self.updated_at.isoformat()
         return instance_info
-    
-base = BaseModel()
-print(base)
